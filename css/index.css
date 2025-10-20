@@ -1185,8 +1185,11 @@ body {
 }
 
 .section8 video {
-    width: 26vw;
-    height: auto;
+   width: 26vw;
+  height: auto;
+  display: block;       /* 🔥 Safari에서 공간 0 되는 문제 해결 */
+  object-fit: contain;  /* 비율 유지하면서 보여줌 */
+  background: #000;     /* 비디오 안 보일 때 대비 */
 }
 
 
