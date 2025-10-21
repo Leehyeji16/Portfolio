@@ -1389,6 +1389,15 @@ body {
         align-items: center;
     }
 
+    .section4 .one .computer .webimg {
+        margin-top: -80vh !important;
+        transition: 1.8s ease-out !important;
+    }
+
+    .section4 .one .computer.on .webimg {
+        margin-top: 0 !important;
+    }
+
     .section4 .one .computer .monitor {
         position: relative;
         width: 100%;
@@ -1439,10 +1448,10 @@ body {
 
     /*section6*/
     .section6 {
-        transform: scale(0.8);
-        transform-origin: top center;
-        height: 100vh;
-        overflow: hidden;
+        height: auto !important;
+        overflow: visible !important;
+        transform: none !important;
+        padding-bottom: 10vh;
     }
 
     .section6 .imgbox {
@@ -1522,6 +1531,35 @@ body {
         font-size: 1rem !important;
     }
 
+
+    .section6,
+    .section7 {
+        height: auto !important;
+        overflow: visible !important;
+        transform: none !important;
+    }
+
+    .section8 {
+        position: relative;
+        z-index: 15;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 10vh 0;
+        text-align: center;
+    }
+
+    .section8 video {
+        display: block !important;
+        width: 80vw !important;
+        max-width: 900px;
+        height: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative;
+        z-index: 20 !important;
+    }
+
+    /*section9*/
     .photo-wall {
         grid-template-columns: repeat(4, 1fr);
         max-width: 90%;
