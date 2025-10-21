@@ -756,13 +756,9 @@ body {
     transform: rotateY(15deg);
 }
 
-/* .section4 .one:nth-of-type(2n) .computer .com2 {
-    transform: rotateY(190deg);
-    z-index: 1; 
-} */
+
 .section4 .one:nth-of-type(2n) .computer .com2 {
     z-index: 1;
-    /* 짝수번째도 받침대를 더 뒤로 */
     left: -5.2vw;
 }
 
@@ -770,25 +766,21 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    margin-top: -50%;
-    /* PC와 동일한 애니메이션 */
-    transition: 1s ease-out;
+    margin-top: -100vh;
+    transition: 2s ease-out;
     z-index: 45;
 }
 
 .section4 .one .computer.on .webimg {
     margin-top: 0px;
-    /* 내려오는 애니메이션 */
 }
 
-/* screen 내부 이미지 설정 */
 .section4 .one .computer .screen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     position: relative;
-    /* absolute에서 변경 */
 }
 
 .section4 .computer .webimg {
@@ -797,7 +789,6 @@ body {
     margin-top: -46.3vh;
     transition: 2s;
     z-index: 45;
-    /* 웹 이미지도 앞으로 */
 }
 
 .section4 .computer.on .webimg {
@@ -807,7 +798,6 @@ body {
 .section4 .computer .monitor .webimg {
     width: 100%;
     z-index: 45;
-    /* 모니터 내부 웹 이미지 */
 }
 
 
@@ -899,26 +889,22 @@ body {
     box-sizing: border-box;
 }
 
-/* 내부 타이틀 */
 .section6 .imgbox .left_img .big_textbox .title {
     font-size: 1.9rem;
     color: #fff;
     margin-bottom: 2vh;
 }
 
-/* 구분선 */
 .section6 .imgbox .left_img .big_textbox .line1 {
     width: 10.7vw;
     height: 0.25vh;
     background-color: #fff;
 }
 
-/* 내부 텍스트 그룹 */
 .section6 .imgbox .left_img .big_textbox .text_box {
     margin-top: 3.7vh;
 }
 
-/* 개별 항목 */
 .section6 .imgbox .left_img .big_textbox .text_box .title1 {
     margin-bottom: 2.3vh;
     display: flex;
@@ -927,7 +913,6 @@ body {
     gap: 1vw;
 }
 
-/* 라벨 부분 */
 .section6 .imgbox .left_img .big_textbox .text_box .title1 .label {
     min-width: 10.4vw;
     font-size: 0.95rem;
@@ -935,7 +920,6 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* 색상 스와치 */
 .section6 .imgbox .left_img .big_textbox .text_box .title1 .text .swatch {
     display: inline-block;
     width: 1vw;
@@ -946,13 +930,11 @@ body {
     color: rgba(255, 255, 255, 1);
 }
 
-
 .section6 .imgbox .rigth_img {
     width: 100%;
     height: auto;
 }
 
-/* 오른쪽 카드 텍스트 박스 */
 .section6 .imgbox .rigth_img .big_textbox {
     margin-bottom: 4.6vh;
     position: absolute;
@@ -967,26 +949,22 @@ body {
     box-sizing: border-box;
 }
 
-/* 제목 */
 .section6 .imgbox .rigth_img .big_textbox .title {
     font-size: 1.9rem;
     color: #fff;
     margin-bottom: 2vh;
 }
 
-/* 구분선 */
 .section6 .imgbox .rigth_img .big_textbox .line1 {
     width: 10.7vw;
     height: 0.25vh;
     background-color: #fff;
 }
 
-/* 본문 그룹 */
 .section6 .imgbox .rigth_img .big_textbox .text_box {
     margin-top: 3.7vh;
 }
 
-/* 개별 항목 */
 .section6 .imgbox .rigth_img .big_textbox .text_box .title1 {
     margin-bottom: 2.3vh;
     display: flex;
@@ -995,7 +973,6 @@ body {
     gap: 1vw;
 }
 
-/* 라벨 (항목명) */
 .section6 .imgbox .rigth_img .big_textbox .text_box .title1 .label {
     min-width: 10.4vw;
     font-size: 0.95rem;
@@ -1003,7 +980,6 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* 색상 스와치 */
 .section6 .imgbox .rigth_img .big_textbox .text_box .title1 .text .swatch {
     display: inline-block;
     width: 1vw;
@@ -1185,11 +1161,11 @@ body {
 }
 
 .section8 video {
-   width: 26vw;
-  height: auto;
-  display: block;       /* 🔥 Safari에서 공간 0 되는 문제 해결 */
-  object-fit: contain;  /* 비율 유지하면서 보여줌 */
-  background: #000;     /* 비디오 안 보일 때 대비 */
+    width: 26vw;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #000;
 }
 
 
@@ -1245,7 +1221,7 @@ body {
     transform: scale(1.1);
 }
 
-/* 대표컷 크게(2x2) + 나머지 정사각 */
+
 .photo:first-child {
     grid-column: span 2;
     grid-row: span 2;
@@ -1321,12 +1297,14 @@ body {
         max-width: 90%;
     }
 
+    /*section1*/
     .section1 .text_box h2,
     .section1 .text_box h3,
     .section1 .text_box h4 {
         font-size: 5rem;
     }
 
+    /*section2*/
     .section2 .img_box .img {
         max-width: 100%;
         height: auto;
@@ -1363,12 +1341,14 @@ body {
         text-align: center;
     }
 
+    /*section3*/
     .section3 {
         margin-top: 10vh;
         position: relative;
         z-index: 10;
     }
 
+    /*section4*/
     .section4 .one {
         display: flex;
         flex-direction: row;
@@ -1446,13 +1426,22 @@ body {
         display: block;
     }
 
+    /*section5*/
+    .section5 ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1vh;
+    }
 
+    .section5 ul li {
+        margin: 0.5vh 0.5vw;
+    }
+
+    /*section6*/
     .section6 {
         transform: scale(0.8);
-        /* 전체 축소 */
         transform-origin: top center;
         height: 100vh;
-        /* 한 화면에 꽉 차게 */
         overflow: hidden;
     }
 
@@ -1464,19 +1453,21 @@ body {
         gap: 4vw;
     }
 
-    /* 왼쪽 텍스트 박스 위로 */
     .section6 .imgbox .left_img {
         transform: translateY(-4vh);
         transition: transform 0.3s ease;
     }
 
-    /* 오른쪽 텍스트 박스 아래로 */
+    .section6 .imgbox .left_img .big_textbox {
+        top: 5vh !important;
+        transform: translate(-4vw, 0) !important;
+    }
+
     .section6 .imgbox .rigth_img {
         transform: translateY(4vh);
         transition: transform 0.3s ease;
     }
 
-    /* 내부 텍스트박스 크기 조정 */
     .section6 .big_textbox {
         padding: 4vh 3vw;
         border-radius: 3vw;
@@ -1506,6 +1497,7 @@ body {
         height: 0.9vw;
     }
 
+    /*section7*/
     .section7 h1 {
         font-size: 4rem !important;
     }
@@ -1535,16 +1527,7 @@ body {
         max-width: 90%;
     }
 
-    .section5 ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1vh;
-    }
-
-    .section5 ul li {
-        margin: 0.5vh 0.5vw;
-    }
-
+    /*section10*/
     .section10 {
         position: relative !important;
         padding: 0 0 10vh 0 !important;
