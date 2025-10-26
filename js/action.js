@@ -49,7 +49,7 @@ gsap.timeline({
     }
   }
 }).to(".mainImgWrap", {
-  marginLeft: "7.8vw",
+  marginLeft: -150,
   top: "145%",
   scale: 0.2,
   rotate: -50
@@ -229,8 +229,8 @@ gsap.timeline({
   y: 100,
   autoAlpha:0,
 }).from(".section6 .left_img .big_textbox", {
-  x: "-5.2vw",
-  y:"2.6vh",
+  x: -100,
+  y:50,
   autoAlpha:0,
 },'bigtextbox')
 .from(".section6 .rigth_img .big_textbox", {
@@ -303,80 +303,90 @@ gsap.timeline({
   }
 })
 .from(".photo1 img", {
-  left: "-5vw",
-  top: "-5vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-100,
+  top:-100,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo2 img", {
-  left: "-7.8vw",
-  top: "-21.3vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-150,
+  top:-230,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo3 img", {
-  left: "0vw",
-  top: "-19.4vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:0,
+  top:-210,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo4 img", {
-  left: "1.6vw",
-  top: "-13.9vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:30,
+  top:-150,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo5 img", {
-  left: "5.2vw",
-  top: "-18.5vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:100,
+  top:-200,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo6 img", {
-  left: "2.6vw",
-  top: "6.5vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:50,
+  top:70,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo7 img", {
-  left: "-5.2vw",
-  top: "-18.5vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-100,
+  top:-200,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo8 img", {
-  left: "-5.2vw",
-  top: "27.8vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-100,
+  top:300,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo9 img", {
-  left: "18.2vw",
-  top: "-9.3vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:350,
+  top:-100,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo10 img", {
-  left: "-7.8vw",
-  top: "0vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-150,
+  top:0,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo11 img", {
-  left: "-7.8vw",
-  top: "13.9vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-150,
+  top:150,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo12 img", {
-  left: "-7.8vw",
-  top: "4.6vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:-150,
+  top:50,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo13 img", {
-  left: "10.4vw",
-  top: "9.3vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:200,
+  top:100,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo14 img", {
-  left: "15.6vw",
-  top: "18.5vh",
-  autoAlpha: 0,
-}, 'photoImg')
+  left:300,
+  top:200,
+  autoAlpha:0,
+},'photoImg')
 .from(".photo15 img", {
-  left: "15.6vw",
-  top: "23.1vh",
-  autoAlpha: 0,
-}, 'photoImg');
+  left:300,
+  top:250,
+  autoAlpha:0,
+},'photoImg')
 
 
+
+
+
+// $('.section4 .screen').mouseover(function(){
+//   let img6Screen = $(this).height();
+//   let img6Height = $(this).find('img').height();
+//   $(this).find('img').css({top:(img6Screen-img6Height)})
+// }).mouseout(function(){
+//   $(this).find('img').css({top:0})
+// });
 
