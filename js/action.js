@@ -575,14 +575,13 @@ ScrollTrigger.matchMedia({
         start: "top 95%",
         end: 'bottom top',
         scrub: true,
-        markers: true
       }
     }).from(".section7 .imgbox .top_img .big_textbox", {
       left: '-50%',
-      y: 400
+      y: 250
     }).from(".section7 .imgbox .bottom_img .big_textbox", {
       left: '-50%',
-      y: 400
+      y: 250
     })
 
 
