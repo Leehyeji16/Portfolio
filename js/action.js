@@ -557,16 +557,16 @@ ScrollTrigger.matchMedia({
     gsap.timeline({
       scrollTrigger: {
         trigger: ".section7",
-        start: "top 50%",
+        start: "top 40%",
         end: 'bottom top',
         scrub: true,
       }
     }).from(".section7 .imgbox .top_img .big_textbox", {
       left: '-50%',
-      y:400
+      y:300
     }).from(".section7 .imgbox .bottom_img .big_textbox", {
       left: '-50%',
-      y:400
+      y:300
     })
 
 
