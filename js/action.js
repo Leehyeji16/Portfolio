@@ -577,11 +577,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
       }
     }).from(".section7 .imgbox .top_img .big_textbox", {
-      left: '-50%',
-      y: 250
+      left: '-20%',
+      y: 100
     }).from(".section7 .imgbox .bottom_img .big_textbox", {
-      left: '-50%',
-      y: 250
+      left: '-20%',
+      y: 100
     })
 
 
