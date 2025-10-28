@@ -107,7 +107,7 @@
     .section10 {position: relative;}
     /* .section10 .centerbox {display: flex; flex-direction: column;} */
     .section10 img {width: 100%; position: absolute; }
-    .section10 .left_textbox {font-size: 4vw; position: relative; top: 0; padding: 25px; margin-top: 0;}
+    .section10 .left_textbox {font-size: 4vw; position: relative; top: 0; padding: 22px; margin-top: 0;}
     .section10 .line { display: none;}
     .section10 .right_textbox {position: relative; bottom: 0; order: 4;  text-align: center; padding: 100px 0;}
     .section10 .left_textbox h3{font-size: 3vw;margin: 0;}
