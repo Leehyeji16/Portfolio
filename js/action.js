@@ -209,6 +209,91 @@ ScrollTrigger.matchMedia({
 
 
     // ------------------------------------------------
+    // ✨ Section 6~7 추가 타이핑 효과
+    // ------------------------------------------------
+
+    // 7️⃣ 김급식 App Upgrade
+    const content7 = " Title: 김급식 App Upgrade ";
+    const text7 = document.querySelector(".section6 .left_img .title.mainfont");
+    let index7 = 0;
+
+    function typing7() {
+      if (index7 < content7.length) {
+        text7.textContent += content7[index7];
+        index7++;
+        setTimeout(typing7, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section6 .left_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing7()
+    });
+
+    // 8️⃣ Note Design
+    const content8 = " Title: Note Design ";
+    const text8 = document.querySelector(".section6 .rigth_img .title.mainfont");
+    let index8 = 0;
+
+    function typing8() {
+      if (index8 < content8.length) {
+        text8.textContent += content8[index8];
+        index8++;
+        setTimeout(typing8, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section6 .rigth_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing8()
+    });
+
+    // 9️⃣ Class Care
+    const content9 = " Title: Class Care ";
+    const text9 = document.querySelector(".section7 .top_img .big_textbox .title.mainfont");
+    let index9 = 0;
+
+    function typing9() {
+      if (index9 < content9.length) {
+        text9.textContent += content9[index9];
+        index9++;
+        setTimeout(typing9, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section7 .top_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing9()
+    });
+
+    // 🔟 GEMORA
+    const content10 = " Title: GEMORA ";
+    const text10 = document.querySelector(".section7 .bottom_img .big_textbox .title.mainfont");
+    let index10 = 0;
+
+    function typing10() {
+      if (index10 < content10.length) {
+        text10.textContent += content10[index10];
+        index10++;
+        setTimeout(typing10, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section7 .bottom_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing10()
+    });
+
+
+    // ------------------------------------------------
     // Section 2 : 이미지 추가 이동
     // ------------------------------------------------
     gsap.timeline({
@@ -663,7 +748,85 @@ ScrollTrigger.matchMedia({
       onEnter: () => typing6()
     });
 
+    // 7️⃣ 김급식 App Upgrade
+    const content7 = " Title: 김급식 App Upgrade ";
+    const text7 = document.querySelector(".section6 .left_img .title.mainfont");
+    let index7 = 0;
 
+    function typing7() {
+      if (index7 < content7.length) {
+        text7.textContent += content7[index7];
+        index7++;
+        setTimeout(typing7, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section6 .left_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing7()
+    });
+
+    // 8️⃣ Note Design
+    const content8 = " Title: Note Design ";
+    const text8 = document.querySelector(".section6 .rigth_img .title.mainfont");
+    let index8 = 0;
+
+    function typing8() {
+      if (index8 < content8.length) {
+        text8.textContent += content8[index8];
+        index8++;
+        setTimeout(typing8, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section6 .rigth_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing8()
+    });
+
+    // 9️⃣ Class Care
+    const content9 = " Title: Class Care ";
+    const text9 = document.querySelector(".section7 .top_img .big_textbox .title.mainfont");
+    let index9 = 0;
+
+    function typing9() {
+      if (index9 < content9.length) {
+        text9.textContent += content9[index9];
+        index9++;
+        setTimeout(typing9, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section7 .top_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing9()
+    });
+
+    // 🔟 GEMORA
+    const content10 = " Title: GEMORA ";
+    const text10 = document.querySelector(".section7 .bottom_img .big_textbox .title.mainfont");
+    let index10 = 0;
+
+    function typing10() {
+      if (index10 < content10.length) {
+        text10.textContent += content10[index10];
+        index10++;
+        setTimeout(typing10, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".section7 .bottom_img",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing10()
+    });
     // ------------------------------------------------
     // Section 3 : Skill 영역
     // ------------------------------------------------
