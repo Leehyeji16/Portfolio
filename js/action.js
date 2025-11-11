@@ -19,8 +19,8 @@ ScrollTrigger.matchMedia({
 
     // Lenis 초기화
     lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.8, // ← 기존 1.2보다 살짝 길게 (스크롤 관성감 향상)
+      easing: (t) => Math.min(1, 1 - Math.pow(2, -10 * t)), // 감속형 easing
       smooth: true
     });
 
@@ -33,11 +33,18 @@ ScrollTrigger.matchMedia({
     }
     lenisRAF = requestAnimationFrame(raf);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
+    // gsap.ticker.add((time) => {
+    //   lenis.raf(time * 1000);
+    // });
+    // gsap.ticker.lagSmoothing(0);
 
+    window.addEventListener("load", () => {
+      setTimeout(() => ScrollTrigger.refresh(), 500);
+    });
+
+    window.addEventListener("beforeunload", () => {
+      cancelAnimationFrame(lenisRAF);
+    });
     // ------------------------------------------------
     // Section 1 : 글씨조각 애니메이션 + 이미지 이동
     // ------------------------------------------------
@@ -52,6 +59,8 @@ ScrollTrigger.matchMedia({
       stagger: 0.05,
       duration: 1
     });
+
+
 
     gsap.timeline({
       scrollTrigger: {
@@ -74,6 +83,130 @@ ScrollTrigger.matchMedia({
       scale: 0.2,
       rotate: -50
     });
+
+    // 1️⃣ ELAVIE Perfume
+    const content1 = " Title: ELAVIE Perfume ";
+    const text1 = document.querySelector(".content_box1 .title.mainfont");
+    let index1 = 0;
+
+    function typing1() {
+      if (index1 < content1.length) {
+        text1.textContent += content1[index1];
+        index1++;
+        setTimeout(typing1, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box1",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing1()
+    });
+
+
+    // 2️⃣ Honest Lab
+    const content2 = " Title: Honest Lab ";
+    const text2 = document.querySelector(".content_box2 .title.mainfont");
+    let index2 = 0;
+
+    function typing2() {
+      if (index2 < content2.length) {
+        text2.textContent += content2[index2];
+        index2++;
+        setTimeout(typing2, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box2",
+      start: "top 50%",
+      once: true,
+      onEnter: () => typing2()
+    });
+
+    // 3  Hi-Medi Digital Car
+    const content3 = "Title: Hi-Medi Digital Care";
+    const text3 = document.querySelector(".content_box3 .title.mainfont");
+    let index3 = 0;
+
+    function typing3() {
+      if (index3 < content3.length) {
+        text3.textContent += content3[index3];
+        index3++;
+        setTimeout(typing3, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box3",
+      start: "top 50%",
+      once: true,
+      onEnter: () => typing3()
+    });
+
+    // 4️⃣ Theme Park
+    const content4 = " Title: Theme Park ";
+    const text4 = document.querySelector(".content_box4 .title.mainfont");
+    let index4 = 0;
+
+    function typing4() {
+      if (index4 < content4.length) {
+        text4.textContent += content4[index4];
+        index4++;
+        setTimeout(typing4, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box4",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing4()
+    });
+
+
+    // 5️⃣ Luminote
+    const content5 = " Title: Luminote ";
+    const text5 = document.querySelector(".content_box5 .title.mainfont");
+    let index5 = 0;
+
+    function typing5() {
+      if (index5 < content5.length) {
+        text5.textContent += content5[index5];
+        index5++;
+        setTimeout(typing5, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box5",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing5()
+    });
+
+
+    // 6️⃣ Second Portfolio: The Squirrel's Journey
+    const content6 = " Second Portfolio: The Squirrel's Journey ";
+    const text6 = document.querySelector(".content_box6 .title.mainfont");
+    let index6 = 0;
+
+    function typing6() {
+      if (index6 < content6.length) {
+        text6.innerHTML += content6[index6]; // <br> 포함용 innerHTML 사용
+        index6++;
+        setTimeout(typing6, 120);
+      }
+    }
+
+    ScrollTrigger.create({
+      trigger: ".content_box6",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing6()
+    });
+
 
     // ------------------------------------------------
     // Section 2 : 이미지 추가 이동
@@ -260,18 +393,21 @@ ScrollTrigger.matchMedia({
     // ------------------------------------------------
     // Section 8 : Video
     // ------------------------------------------------
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".section8",
-        start: "top top",
-        end: 'bottom top',
-        scrub: true,
-        pin: true
-      }
-    })
-      .to("#video8", {
-        scale: 1.8,
-      });
+    const video8 = document.querySelector(".section8 video");
+    if (video8) {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".section8",
+          start: "top top",
+          end: 'bottom top',
+          scrub: true,
+          pin: true
+        }
+      })
+        .to(video8, {
+          scale: 1.8,
+        });
+    }
 
     // ------------------------------------------------
     // Section 9 : photo
@@ -346,10 +482,10 @@ ScrollTrigger.matchMedia({
     }
     lenisRAF = requestAnimationFrame(raf);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
+    // gsap.ticker.add((time) => {
+    //   lenis.raf(time * 1000);
+    // });
+    // gsap.ticker.lagSmoothing(0);
 
 
 
@@ -415,6 +551,117 @@ ScrollTrigger.matchMedia({
     });
 
 
+    // ------------------------------------------------
+    // ✨ 모바일에서도 타이핑 효과 적용
+    // ------------------------------------------------
+
+    // 1️⃣ ELAVIE Perfume
+    const content1 = " Title: ELAVIE Perfume ";
+    const text1 = document.querySelector(".content_box1 .title.mainfont");
+    let index1 = 0;
+    function typing1() {
+      if (index1 < content1.length) {
+        text1.textContent += content1[index1];
+        index1++;
+        setTimeout(typing1, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box1",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing1()
+    });
+
+    // 2️⃣ Honest Lab
+    const content2 = " Title: Honest Lab ";
+    const text2 = document.querySelector(".content_box2 .title.mainfont");
+    let index2 = 0;
+    function typing2() {
+      if (index2 < content2.length) {
+        text2.textContent += content2[index2];
+        index2++;
+        setTimeout(typing2, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box2",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing2()
+    });
+
+    // 3️⃣ Hi-Medi Digital Care
+    const content3 = " Title: Hi-Medi Digital Care ";
+    const text3 = document.querySelector(".content_box3 .title.mainfont");
+    let index3 = 0;
+    function typing3() {
+      if (index3 < content3.length) {
+        text3.textContent += content3[index3];
+        index3++;
+        setTimeout(typing3, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box3",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing3()
+    });
+
+    // 4️⃣ Theme Park
+    const content4 = " Title: Theme Park ";
+    const text4 = document.querySelector(".content_box4 .title.mainfont");
+    let index4 = 0;
+    function typing4() {
+      if (index4 < content4.length) {
+        text4.textContent += content4[index4];
+        index4++;
+        setTimeout(typing4, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box4",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing4()
+    });
+
+    // 5️⃣ Luminote
+    const content5 = " Title: Luminote ";
+    const text5 = document.querySelector(".content_box5 .title.mainfont");
+    let index5 = 0;
+    function typing5() {
+      if (index5 < content5.length) {
+        text5.textContent += content5[index5];
+        index5++;
+        setTimeout(typing5, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box5",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing5()
+    });
+
+    // 6️⃣ Second Portfolio
+    const content6 = " Second Portfolio: The Squirrel's Journey ";
+    const text6 = document.querySelector(".content_box6 .title.mainfont");
+    let index6 = 0;
+    function typing6() {
+      if (index6 < content6.length) {
+        text6.innerHTML += content6[index6]; // <br> 대응
+        index6++;
+        setTimeout(typing6, 120);
+      }
+    }
+    ScrollTrigger.create({
+      trigger: ".content_box6",
+      start: "top 80%",
+      once: true,
+      onEnter: () => typing6()
+    });
 
 
     // ------------------------------------------------
@@ -590,6 +837,7 @@ ScrollTrigger.matchMedia({
     // ------------------------------------------------
     // Section 8 : Video
     // ------------------------------------------------
+
     // gsap.timeline({
     //   scrollTrigger: {
     //     trigger: ".section8",
