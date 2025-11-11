@@ -173,7 +173,11 @@ body {
   }
 }
 
-.content_box1 .title.mainfont, .content_box .title.mainfont{
+.content_box1 .title.mainfont,
+.content_box .title.mainfont,
+.section6 .title.mainfont,
+.section7 .title.mainfont
+{
   display: table-cell;
   vertical-align: middle;
   border-right: 0.1em solid white;
