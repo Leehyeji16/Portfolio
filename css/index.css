@@ -167,22 +167,40 @@ body {
   color: #fff;
 }
 
-@keyframes cursor{
-  50%{
-    border-color: transparent;
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
 
 .content_box1 .title.mainfont,
 .content_box .title.mainfont,
 .section6 .title.mainfont,
-.section7 .title.mainfont
-{
-  display: table-cell;
+.section7 .title.mainfont {
+  display: inline-block; /* ✨ 글자 옆에 커서가 정확히 붙게 */
+  position: relative;
+  white-space: pre-wrap; /* 줄바꿈 허용 */
   vertical-align: middle;
-  border-right: 0.1em solid white;
-  animation: cursor 0.5s ease infinite;
 }
+
+/* ✨ 커서 (::after) */
+.content_box1 .title.mainfont::after,
+.content_box .title.mainfont::after,
+.section6 .title.mainfont::after,
+.section7 .title.mainfont::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em; /* ✨ 글자 높이만큼 커서 길이 */
+  background-color: white;
+  margin-left: 4px;
+  animation: blink 0.8s step-end infinite;
+  vertical-align: bottom; /* ✨ 커서가 글자 baseline에 맞춰짐 */
+}
+
 
 .section1 img {}
 
