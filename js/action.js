@@ -66,11 +66,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph2.png";
+          if (graphImg) graphImg.src = "images/section2/graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph.png";
+          if (graphImg) graphImg.src = "images/section2/graph.png";
         }
       }
     }).to(".mainImgWrap", {
@@ -505,11 +505,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph2.png";
+          if (graphImg) graphImg.src = "images/section2/graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph.png";
+          if (graphImg) graphImg.src = "images/section2/graph.png";
         }
       }
     }).to(".mainImgWrap", {
@@ -527,11 +527,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph2.png";
+          if (graphImg) graphImg.src = "images/section2/graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/Graph.png";
+          if (graphImg) graphImg.src = "images/section2/graph.png";
         }
       }
     }).from(".graph_box img", {
