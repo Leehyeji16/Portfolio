@@ -1,3 +1,127 @@
+/* 640px 미디어쿼리 닫힌 후 여기에 추가 */
+
+@media screen and (max-width: 1200px) {
+    .section4 {
+        padding: 50px 0 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    .section4 .one {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 0 !important;
+        margin: 0 auto 80px auto !important;
+        overflow: hidden !important;
+    }
+
+    .section4 .one .bg_circle {
+        display: none !important;
+    }
+
+    .section4 .one .content_box {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        z-index: 5 !important;
+        overflow: hidden !important;
+        word-break: keep-all !important;
+        order: 2 !important;
+    }
+
+    .section4 .one .content_box .title {
+        font-size: 1.8rem !important;
+        margin-top: 0 !important;
+    }
+
+    .section4 .one .content_box .text_box .title1 .label {
+        min-width: 130px !important;
+    }
+
+    .section4 .one .computer {
+        position: relative !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        order: 1 !important;
+    }
+
+    .section4 .one .computer .screen img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .section4 .one .computer .screen_box {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .section4 .one:nth-of-type(2n) .computer {
+        left: 0 !important;
+    }
+
+    .section4 .one .computer .monitor {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: rotateY(0deg) !important;
+        transition: 1s !important;
+        transform-style: preserve-3d !important;
+    }
+
+    .section4 .one .computer.on .monitor {
+        transform: rotateY(10deg) !important;
+    }
+
+    .section4 .one:nth-of-type(2n) .computer.on .monitor {
+        transform: rotateY(-10deg) !important;
+    }
+
+    .section4 .one .computer .com1 {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .section4 .one .computer .screen {
+        position: absolute !important;
+        top: 3% !important;
+        left: 2% !important;
+        width: 96% !important;
+        height: 83% !important;
+        overflow: hidden !important;
+    }
+
+    .section4 .one .computer .webimg {
+        width: 100% !important;
+        margin-top: -500px !important;
+        transition: 1.8s ease-out !important;
+    }
+
+    .section4 .one .computer.on .webimg {
+        margin-top: 0 !important;
+    }
+
+    .section4 .one .computer .com2box {
+        position: relative !important;
+        width: 50% !important;
+        margin: -5px auto 0 !important;
+        left: auto !important;
+        transform: none !important;
+    }
+
+    .section4 .one .computer .com2 {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
 @media screen and (max-width:640px) {
 
 
@@ -125,6 +249,10 @@
         line-height: 1;
     }
 
+    .section2 .m-br {
+        display: block;
+    }
+
     .section3 h1 {
         font-size: 50px;
     }
@@ -140,10 +268,18 @@
         font-size: 50px;
     }
 
+    .section4 .one .content_box {
+        padding-left: 20px;
+    }
+
     .section4 .one1 {
         width: auto;
         flex-direction: column;
         gap: 100px;
+    }
+
+    .section4 .one1 .title {
+        margin-top: 0;
     }
 
     .section4 .one2 {
@@ -247,13 +383,16 @@
     }
 
     .section4 .computer .webimg {
+        margin-top: -500px;
+    }
+
+    .section4 .computer.on .webimg {
         margin-top: 0;
     }
 
     .section4 img {
         width: 20vw;
     }
-
 
     .section5 h1 {
         font-size: 50px;
@@ -363,6 +502,14 @@
         font-weight: normal;
     }
 
+    .section7 .imgbox .top_img .big_textbox {
+        transform: translate(5%, 10%);
+    }
+
+    .section7 .imgbox .bottom_img .big_textbox {
+        transform: translate(5%, 10%);
+    }
+
     .section8 video {
         width: 100%;
         display: block;
@@ -426,4 +573,160 @@
         font-size: 3vw;
         margin: 0;
     }
+}
+
+@media screen and (max-width: 550px) {
+    .section1 .centerbox {
+        padding-left: 50px !important;
+    }
+
+    .section2 .tbox1 .textbox1 p.date {
+        word-break: keep-all;
+        white-space: normal;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .section2 .textbox1 P {
+        font-size: 16px;
+    }
+
+    .section2 .textbox1 span {
+        font-size: 16px;
+    }
+
+    .section2 .tbox3 .textbox1 a {
+        font-size: 16px;
+    }
+
+    .section2 .img_box {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .section2 .content_box {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .section2 .textbox1 .date {
+        font-size: 14px;
+    }
+
+    .section2 .textbox1 .desc {
+        font-size: 14px;
+    }
+
+    .section3 .skill-box li {
+        font-size: 14px;
+    }
+
+    .section4 .one .content_box .text_box .title1 .label {
+        min-width: 110px !important;
+        font-size: 14px;
+    }
+
+    .section4 .one .text_box .title1 {
+        font-size: 14px;
+    }
+
+    .section4 .one .title {
+        font-size: 20px !important;
+    }
+
+    .section4 .one .computer {
+        width: 75% !important;
+        margin: 0 auto !important;
+    }
+
+    .section4 .one {
+        overflow: visible !important;
+    }
+
+    /* content_box의 overflow 풀고 padding 주기 */
+    .section4 .one .content_box {
+        overflow: visible !important;
+        padding: 0 30px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* 대신 컴퓨터가 삐져나오지 않게 컴퓨터만 hidden 처리 */
+    .section4 .one .computer {
+        overflow: hidden !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+
+    /* 섹션4 title1 간격 */
+    .section4 .one .content_box .text_box .title1 {
+        gap: 10px !important;
+    }
+
+    .section5 ul li img {
+        width: 80%;
+    }
+
+    .section6 .big_textbox .text_box .title1 .text {
+        font-size: 14px;
+    }
+
+    .section7 .imgbox .top_img .big_textbox {
+        padding: 25px;
+        position: relative;
+        width: 100%;
+        transform: translate(10px, 10%);
+    }
+
+    .section7 .imgbox .bottom_img .big_textbox {
+        padding: 25px;
+        position: relative;
+        width: 100%;
+        transform: translate(10px, 10%);
+    }
+
+    .section7 .imgbox .top_img .big_textbox .text_box .title1 .text {
+        font-size: 14px;
+    }
+
+    .section7 .imgbox .bottom_img .big_textbox .text_box .title1 .text {
+        font-size: 14px;
+    }
+
+    .section3 h1,
+    .section4 h1,
+    .section5 h1,
+    .section6 h1,
+    .section7 h1,
+    .section8 h1,
+    .section9 h1 {
+        font-size: 30px;
+    }
+
+    .section10 .left_textbox {
+        font-size: 3.5vw;
+    }
+
+    .section10 .left_textbox h3 {
+        font-size: 2.5vw;
+    }
+
+    .centerbox,
+    .section3,
+    .section5,
+    .section8 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .section1 .text_box h2,
+    .section1 .text_box h3,
+    .section1 .text_box h4 {
+        font-size: 10vw;
+    }
+
+
 }

@@ -75,18 +75,10 @@ body {
   animation: mainImg1 1s infinite alternate;
 }
 
-/* @keyframes mainImg1 {
-  0% {transform: scaleY(0.9) translate(-50%,0);;}
-  100% {transform: scaleYdark(1) translate(-50%,0);;}
-} */
 .mainImg {
   animation: mainImg2 1s infinite alternate;
 }
 
-/* @keyframes mainImg2 {
-  0% {transform: scaleX(1);}
-  100% {transform: scaleX(0.99);}
-} */
 .centerbox {
   max-width: 1650px;
   margin: 0 auto;
@@ -166,9 +158,12 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -178,9 +173,9 @@ body {
 .content_box .title.mainfont,
 .section6 .title.mainfont,
 .section7 .title.mainfont {
-  display: inline-block; /* ✨ 글자 옆에 커서가 정확히 붙게 */
+  display: inline-block;
   position: relative;
-  white-space: pre-wrap; /* 줄바꿈 허용 */
+  white-space: pre-wrap;
   vertical-align: middle;
 }
 
@@ -192,15 +187,14 @@ body {
   content: "";
   display: inline-block;
   width: 2px;
-  height: 1em; /* ✨ 글자 높이만큼 커서 길이 */
+  height: 1em;
   background-color: white;
   margin-left: 4px;
   animation: blink 0.8s step-end infinite;
-  vertical-align: bottom; /* ✨ 커서가 글자 baseline에 맞춰짐 */
+  vertical-align: bottom;
 }
 
 
-.section1 img {}
 
 /* .centerbox {border: 1px solid lime;} */
 .section6 .centerbox {
@@ -222,7 +216,7 @@ body {
 .section2 .centerbox {
   display: flex;
   justify-content: space-between;
-  gap: 150px;
+  gap: 120px;
   ;
 }
 
@@ -242,6 +236,8 @@ body {
 .section2 .textbox1 {
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
+  /* 텍스트가 여러 줄일 때 상단 기준으로 맞춤 */
   gap: 40px;
   margin-bottom: 15px;
 }
@@ -259,9 +255,30 @@ body {
 
 .section2 .textbox1 .date {
   font-weight: 700;
-  min-width: 280px;
+  white-space: nowrap; 
+  width: 350px; 
+  flex-shrink: 0; 
   color: #fff;
-  line-height: 50px;
+  line-height: 1.6;
+  font-size: 25px;
+}
+
+/* 설명 부분 (오른쪽 텍스트) */
+.section2 .textbox1 .desc {
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.6;
+  flex-grow: 1;
+  word-break: keep-all; 
+}
+
+/* 텍스트가 단순히 span일 경우를 대비해 통합 스타일 적용 */
+.section2 .textbox1 span,
+.section2 .textbox1 P,
+.section2 .textbox1 a {
+  color: #fff;
+  font-size: 25px;
+  line-height: 1.6;
 }
 
 .section2 .tbox2 {
@@ -283,8 +300,6 @@ body {
   color: #fff;
   font-size: 25px;
 }
-
-.section2 .graph_box {}
 
 /* .section2 img{position: absolute;bottom: 180px;left: 530px;} */
 .section2 .img_box {
@@ -334,6 +349,57 @@ body {
 
 
 /* .section4 */
+.section4 .one0 {
+  padding: 250px 0;
+  display: flex;
+  width: 1650px;
+  align-items: center;
+  gap: 180px;
+  padding: 40px;
+  justify-content: space-between;
+}
+
+.section4 .one0 .content_box0 {
+  margin-bottom: 50px;
+}
+
+.section4 .one0 .title {
+  font-size: 60px;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.section4 .one0 .line1 {
+  width: 205px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.section4 .one0 .text_box {
+  margin-top: 40px;
+}
+
+.section4 .one0 .text_box .title1 {
+  margin-bottom: 25px;
+  display: flex;
+  font-size: 20px;
+  color: #fff;
+}
+
+.section4 .one0 .text_box .title1 .label {
+  min-width: 200px;
+  gap: 20px;
+}
+
+.section4 .one0 .text_box .title1 .text .swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: var(--c);
+}
+
 .section4 {
   display: flex;
   flex-direction: column;
@@ -408,7 +474,6 @@ body {
 }
 
 /* .section4 .one1 .computer img{width: 750px;;height: 750px}    */
-
 .section4 .one2 {
   padding: 250px 0;
   ;
@@ -468,7 +533,6 @@ body {
 }
 
 /* .section4 .one2 .computer img{width: 750px;; height: auto;}  */
-
 .section4 .one3 {
   padding: 250px 0;
   ;
@@ -528,8 +592,6 @@ body {
 }
 
 /* .section4 .one3 .computer img{width: 750px;; height: auto;}  */
-
-
 .section4 .one4 {
   padding: 250px 0;
   ;
@@ -709,8 +771,10 @@ body {
 .section4 .one {
   margin-bottom: 200px;
   position: relative;
+  overflow: visible;
 }
 
+/* ✅ 수정된 부분: bg_circle가 컴퓨터 있는 쪽에 표시되도록 변경 */
 .section4 .one .bg_circle {
   content: "";
   position: absolute;
@@ -718,15 +782,17 @@ body {
   height: 100%;
   border-radius: 50%;
   background: rgba(128, 0, 128, 1);
-  right: -100px;
+  left: -100px;
+  /* 기본값: 왼쪽 (one1, one3, one5의 컴퓨터 위치) */
   top: -50px;
   filter: blur(50px);
   opacity: 0;
 }
 
+/* 짝수번째(one0, one2, one4, one6)는 오른쪽에 컴퓨터가 있으므로 */
 .section4 .one:nth-child(2n) .bg_circle {
-  right: auto;
-  left: -100px;
+  left: auto;
+  right: -100px;
 }
 
 .section4 .content_box {
@@ -738,12 +804,13 @@ body {
   max-width: 750px;
   position: relative;
   text-align: center;
-  left: -100px;
+  left: 100px;
   transition: 2s;
   z-index: 1;
-  /* 부모 요소에 z-index 설정 */
   transform: translateZ(0);
-  /* 3D 컨텍스트 강제 생성 */
+  overflow: visible;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .section4 .computer.on {
@@ -755,12 +822,9 @@ body {
   width: 750px;
   height: 520px;
   display: block;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  perspective: 800px;
   z-index: 2;
-  /* screen_box에 z-index 설정 */
   position: relative;
+  overflow: visible;
 }
 
 .section4 .computer .screen {
@@ -773,43 +837,49 @@ body {
   border-radius: 10px;
   overflow: hidden;
   z-index: 999 !important;
-  /* 매우 높은 값 */
   transform: translateZ(10px) !important;
-  /* 3D로 앞쪽에 배치 */
 }
 
 .section4 .computer .monitor {
   transition: 1s;
   position: relative;
-  z-index: 30;
-  /* 모니터 본체 */
+  z-index: 10;
   width: 720px;
   height: 567px;
+  transform-origin: center center;
+  transform-style: preserve-3d;
 }
 
+
 .section4 .computer.on .monitor {
-  transform: rotateY(-15deg);
+  transform: rotateY(15deg);
 }
 
 .section4 .computer .com1 {
   position: relative;
   width: 100%;
   z-index: 40;
-  /* 모니터 프레임 */
 }
 
+.section4 .computer .com2box {
+  overflow: visible;
+  position: relative;
+  z-index: -1;
+  transform-style: preserve-3d;
+}
+
+/* 4. com2 받침대 위치 조정 */
 .section4 .computer .com2 {
   position: relative;
   max-width: 350px;
   margin-left: 100px;
   margin-top: -10px;
-  z-index: 1;
-  /* 받침대를 가장 뒤로 */
+  z-index: -1;
 }
 
 /* 짝수번째 요소 처리 */
 .section4 .one:nth-of-type(2n) .computer {
-  left: 100px;
+  left: -100px;
 }
 
 .section4 .one:nth-of-type(2n) .computer.on {
@@ -817,19 +887,15 @@ body {
 }
 
 .section4 .one:nth-of-type(2n) .computer.on .monitor {
-  transform: rotateY(15deg);
+  transform: rotateY(-15deg);
 }
 
-/* .section4 .one:nth-of-type(2n) .computer .com2 {
-    transform: rotateY(190deg);
-    z-index: 1; 
-} */
+
 .section4 .one:nth-of-type(2n) .computer .com2 {
-  z-index: 1;
-  /* 짝수번째도 받침대를 더 뒤로 */
-  left: -100px;
+  z-index: -1;
+  left: -40px;
+  margin-left: 50px;
 }
-
 
 .section4 .computer .webimg {
   position: absolute;
@@ -837,7 +903,6 @@ body {
   margin-top: -500px;
   transition: 2s;
   z-index: 45;
-  /* 웹 이미지도 앞으로 */
 }
 
 .section4 .computer.on .webimg {
@@ -847,7 +912,6 @@ body {
 .section4 .computer .monitor .webimg {
   width: 100%;
   z-index: 45;
-  /* 모니터 내부 웹 이미지 */
 }
 
 
@@ -1074,8 +1138,6 @@ body {
   position: relative;
   text-align: right;
 }
-
-.section7 .imgbox .top_img .app_img {}
 
 .section7 .imgbox .top_img .big_textbox {
   margin-bottom: 50px;
@@ -1342,7 +1404,6 @@ width: 300px; height: 200px;  }
   z-index: 10;
 }
 
-.section10 img {}
 
 .section10 .left_textbox {
   position: absolute;
