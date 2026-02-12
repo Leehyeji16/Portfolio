@@ -62,7 +62,7 @@ ScrollTrigger.matchMedia({
       scrollTrigger: {
         trigger: ".section1",
         start: "top top",
-        end: "+=1300",
+        end: "+=1500",
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
