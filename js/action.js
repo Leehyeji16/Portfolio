@@ -19,17 +19,15 @@ ScrollTrigger.matchMedia({
 
     // Lenis 초기화
     lenis = new Lenis({
-      duration: 1.8, // ← 기존 1.2보다 살짝 길게 (스크롤 관성감 향상)
-      easing: (t) => Math.min(1, 1 - Math.pow(2, -10 * t)), // 감속형 easing
+      duration: 1.8,
+      easing: (t) => Math.min(1, 1 - Math.pow(2, -10 * t)),
       smooth: true
     });
 
-    // Lenis와 ScrollTrigger 연동
-    
     lenis.on('scroll', ScrollTrigger.update);
 
     function raf(time) {
-      lenis.raf(time); //raf라는 함수에 time값을 넣어서 실행한다 /.raf Lenis 객체 안에 있는 하나의 함수  /(time)	그 함수를 실행할 때 넘겨주는 값 /.raf(time)	“Lenis의 raf 메서드를 time값으로 실행한다”
+      lenis.raf(time);
       lenisRAF = requestAnimationFrame(raf);
     }
     lenisRAF = requestAnimationFrame(raf);
@@ -57,12 +55,9 @@ ScrollTrigger.matchMedia({
       duration: 1
     });
 
-
-
     // ------------------------------------------------
     // Section 2-1 : graph_box img
     // ------------------------------------------------
-
     gsap.timeline({
       scrollTrigger: {
         trigger: ".section1",
@@ -71,21 +66,19 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph2.png";
+          if (graphImg) graphImg.src = "images/section2/Graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph.png";
+          if (graphImg) graphImg.src = "images/section2/Graph.png";
         }
       }
-
     }).to(".mainImgWrap", {
       marginLeft: -150,
       top: "146%",
       scale: 0.2,
       rotate: -50
     });
-
 
     // ------------------------------------------------
     // Section 2-2 :  이미지 추가 이동
@@ -119,7 +112,7 @@ ScrollTrigger.matchMedia({
       .to(".mainImgWrap", {
         marginLeft: -150,
         top: "225%",
-        scale: 0.05,     
+        scale: 0.05,
         rotate: 0
       })
       .from(".skill-box li", {
@@ -129,15 +122,25 @@ ScrollTrigger.matchMedia({
         stagger: 0.2
       });
 
-
     // ------------------------------------------------
     // Section 4-1 : Web Design 타이핑 애니메이션
-    // ------------------------------------------------   
-    // 1️⃣ ELAVIE Perfume
+    // ------------------------------------------------
+
+    const content0 = " Title: Dashboard & Loading Page ";
+    const text0 = document.querySelector(".content_box0 .title.mainfont");
+    let index0 = 0;
+    function typing0() {
+      if (index0 < content0.length) {
+        text0.textContent += content0[index0];
+        index0++;
+        setTimeout(typing0, 120);
+      }
+    }
+    ScrollTrigger.create({ trigger: ".content_box0", start: "top 80%", once: true, onEnter: () => typing0() });
+
     const content1 = " Title: ELAVIE Perfume ";
     const text1 = document.querySelector(".content_box1 .title.mainfont");
     let index1 = 0;
-
     function typing1() {
       if (index1 < content1.length) {
         text1.textContent += content1[index1];
@@ -145,20 +148,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing1, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".content_box1", start: "top 80%", once: true, onEnter: () => typing1() });
 
-    ScrollTrigger.create({
-      trigger: ".content_box1",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing1()
-    });
-
-
-    // 2️⃣ Honest Lab
     const content2 = " Title: Honest Lab ";
     const text2 = document.querySelector(".content_box2 .title.mainfont");
     let index2 = 0;
-
     function typing2() {
       if (index2 < content2.length) {
         text2.textContent += content2[index2];
@@ -166,19 +160,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing2, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".content_box2", start: "top 50%", once: true, onEnter: () => typing2() });
 
-    ScrollTrigger.create({
-      trigger: ".content_box2",
-      start: "top 50%",
-      once: true,
-      onEnter: () => typing2()
-    });
-
-    // 3  Hi-Medi Digital Car
     const content3 = "Title: Hi-Medi Digital Care";
     const text3 = document.querySelector(".content_box3 .title.mainfont");
     let index3 = 0;
-
     function typing3() {
       if (index3 < content3.length) {
         text3.textContent += content3[index3];
@@ -186,19 +172,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing3, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".content_box3", start: "top 50%", once: true, onEnter: () => typing3() });
 
-    ScrollTrigger.create({
-      trigger: ".content_box3",
-      start: "top 50%",
-      once: true,
-      onEnter: () => typing3()
-    });
-
-    // 4️⃣ Theme Park
     const content4 = " Title: Theme Park ";
     const text4 = document.querySelector(".content_box4 .title.mainfont");
     let index4 = 0;
-
     function typing4() {
       if (index4 < content4.length) {
         text4.textContent += content4[index4];
@@ -206,20 +184,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing4, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".content_box4", start: "top 80%", once: true, onEnter: () => typing4() });
 
-    ScrollTrigger.create({
-      trigger: ".content_box4",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing4()
-    });
-
-
-    // 5️⃣ Luminote
     const content5 = " Title: Luminote ";
     const text5 = document.querySelector(".content_box5 .title.mainfont");
     let index5 = 0;
-
     function typing5() {
       if (index5 < content5.length) {
         text5.textContent += content5[index5];
@@ -227,34 +196,19 @@ ScrollTrigger.matchMedia({
         setTimeout(typing5, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".content_box5", start: "top 80%", once: true, onEnter: () => typing5() });
 
-    ScrollTrigger.create({
-      trigger: ".content_box5",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing5()
-    });
-
-
-    // 6️⃣ Second Portfolio: The Squirrel's Journey
     const content6 = " Second Portfolio: The Squirrel's Journey ";
     const text6 = document.querySelector(".content_box6 .title.mainfont");
     let index6 = 0;
-
     function typing6() {
       if (index6 < content6.length) {
-        text6.innerHTML += content6[index6]; // <br> 포함용 innerHTML 사용
+        text6.innerHTML += content6[index6];
         index6++;
         setTimeout(typing6, 120);
       }
     }
-
-    ScrollTrigger.create({
-      trigger: ".content_box6",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing6()
-    });
+    ScrollTrigger.create({ trigger: ".content_box6", start: "top 80%", once: true, onEnter: () => typing6() });
 
     // ------------------------------------------------
     // Section 4-2 : .bg_circle 애니메이션
@@ -311,7 +265,7 @@ ScrollTrigger.matchMedia({
     // ------------------------------------------------
     // Section 4-4 : class on 애니메이션
     // ------------------------------------------------
-    document.querySelectorAll(".section4 .one1, .section4 .one2, .section4 .one3, .section4 .one4, .section4 .one5, .section4 .one6")
+    document.querySelectorAll(".section4 .one0, .section4 .one1, .section4 .one2, .section4 .one3, .section4 .one4, .section4 .one5, .section4 .one6")
       .forEach((oneBox) => {
         let computer = oneBox.querySelector(".computer");
         if (computer) {
@@ -323,7 +277,6 @@ ScrollTrigger.matchMedia({
           });
         }
       });
-
 
     // ------------------------------------------------
     // Section 5 : Banner (가로 스크롤)
@@ -403,16 +356,12 @@ ScrollTrigger.matchMedia({
         rotate: 0
       });
 
-
     // ------------------------------------------------
     // ✨ Section 6~7 추가 타이핑 효과
     // ------------------------------------------------
-
-    // 7️⃣ 김급식 App Upgrade
     const content7 = " Title: 김급식 App Upgrade ";
     const text7 = document.querySelector(".section6 .left_img .title.mainfont");
     let index7 = 0;
-
     function typing7() {
       if (index7 < content7.length) {
         text7.textContent += content7[index7];
@@ -420,19 +369,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing7, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".section6 .left_img", start: "top 80%", once: true, onEnter: () => typing7() });
 
-    ScrollTrigger.create({
-      trigger: ".section6 .left_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing7()
-    });
-
-    // 8️⃣ Note Design
     const content8 = " Title: Note Design ";
     const text8 = document.querySelector(".section6 .rigth_img .title.mainfont");
     let index8 = 0;
-
     function typing8() {
       if (index8 < content8.length) {
         text8.textContent += content8[index8];
@@ -440,19 +381,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing8, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".section6 .rigth_img", start: "top 80%", once: true, onEnter: () => typing8() });
 
-    ScrollTrigger.create({
-      trigger: ".section6 .rigth_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing8()
-    });
-
-    // 9️⃣ Class Care
     const content9 = " Title: Class Care ";
     const text9 = document.querySelector(".section7 .top_img .big_textbox .title.mainfont");
     let index9 = 0;
-
     function typing9() {
       if (index9 < content9.length) {
         text9.textContent += content9[index9];
@@ -460,19 +393,11 @@ ScrollTrigger.matchMedia({
         setTimeout(typing9, 120);
       }
     }
+    ScrollTrigger.create({ trigger: ".section7 .top_img", start: "top 80%", once: true, onEnter: () => typing9() });
 
-    ScrollTrigger.create({
-      trigger: ".section7 .top_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing9()
-    });
-
-    // 🔟 GEMORA
     const content10 = " Title: GEMORA ";
     const text10 = document.querySelector(".section7 .bottom_img .big_textbox .title.mainfont");
     let index10 = 0;
-
     function typing10() {
       if (index10 < content10.length) {
         text10.textContent += content10[index10];
@@ -480,13 +405,7 @@ ScrollTrigger.matchMedia({
         setTimeout(typing10, 120);
       }
     }
-
-    ScrollTrigger.create({
-      trigger: ".section7 .bottom_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing10()
-    });
+    ScrollTrigger.create({ trigger: ".section7 .bottom_img", start: "top 80%", once: true, onEnter: () => typing10() });
 
     // ------------------------------------------------
     // Section 8 : Video
@@ -501,10 +420,7 @@ ScrollTrigger.matchMedia({
           scrub: true,
           pin: true
         }
-      })
-        .to(video8, {
-          scale: 1.8,
-        });
+      }).to(video8, { scale: 1.8 });
     }
 
     // ------------------------------------------------
@@ -535,28 +451,13 @@ ScrollTrigger.matchMedia({
       .from(".photo14 img", { left: 300, top: 200, autoAlpha: 0 }, 'photoImg')
       .from(".photo15 img", { left: 300, top: 250, autoAlpha: 0 }, 'photoImg');
 
-    // ⭐ cleanup 함수 (PC → 모바일로 전환될 때 실행됨)
     return () => {
       console.log("PC 모드 종료 - 정리 중...");
-
-      // Lenis 정리
-      if (lenisRAF) {
-        cancelAnimationFrame(lenisRAF);
-        lenisRAF = null;
-      }
-      if (lenis) {
-        lenis.destroy();
-        lenis = null;
-      }
-
-      // GSAP ticker 정리
+      if (lenisRAF) { cancelAnimationFrame(lenisRAF); lenisRAF = null; }
+      if (lenis) { lenis.destroy(); lenis = null; }
       gsap.ticker.remove(() => { });
-
-      // SplitText 정리
       document.querySelectorAll('[class*="split"]').forEach(el => {
-        if (el._splitText) {
-          el._splitText.revert();
-        }
+        if (el._splitText) el._splitText.revert();
       });
     };
   },
@@ -564,7 +465,7 @@ ScrollTrigger.matchMedia({
 
 
   // ------------------------------------------------
-  // // ===== 모바일 버전 (640px 이하) =====
+  // ===== 모바일 버전 (640px 이하) =====
   // ------------------------------------------------
 
   "(max-width: 640px)": function () {
@@ -576,7 +477,6 @@ ScrollTrigger.matchMedia({
       smooth: true
     });
 
-    // Lenis와 ScrollTrigger 연동
     lenis.on('scroll', ScrollTrigger.update);
 
     function raf(time) {
@@ -597,7 +497,6 @@ ScrollTrigger.matchMedia({
       duration: 1
     });
 
-
     gsap.timeline({
       scrollTrigger: {
         trigger: ".section1",
@@ -606,11 +505,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph2.png";
+          if (graphImg) graphImg.src = "images/section2/Graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph.png";
+          if (graphImg) graphImg.src = "images/section2/Graph.png";
         }
       }
     }).to(".mainImgWrap", {
@@ -620,7 +519,6 @@ ScrollTrigger.matchMedia({
       rotate: -50
     });
 
-
     gsap.timeline({
       scrollTrigger: {
         trigger: ".section2 .tbox2",
@@ -629,11 +527,11 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onLeave: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph2.png";
+          if (graphImg) graphImg.src = "images/section2/Graph2.png";
         },
         onEnterBack: () => {
           const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph.png";
+          if (graphImg) graphImg.src = "images/section2/Graph.png";
         }
       }
     }).from(".graph_box img", {
@@ -641,199 +539,96 @@ ScrollTrigger.matchMedia({
       rotate: -50
     });
 
-
     // ------------------------------------------------
     // ✨ 모바일에서도 타이핑 효과 적용
     // ------------------------------------------------
+    const content0 = " Title: Dashboard & Loading Page ";
+    const text0 = document.querySelector(".content_box0 .title.mainfont");
+    let index0 = 0;
+    function typing0() {
+      if (index0 < content0.length) { text0.textContent += content0[index0]; index0++; setTimeout(typing0, 120); }
+    }
+    ScrollTrigger.create({ trigger: ".content_box0", start: "top 80%", once: true, onEnter: () => typing0() });
 
-    // 1️⃣ ELAVIE Perfume
     const content1 = " Title: ELAVIE Perfume ";
     const text1 = document.querySelector(".content_box1 .title.mainfont");
     let index1 = 0;
     function typing1() {
-      if (index1 < content1.length) {
-        text1.textContent += content1[index1];
-        index1++;
-        setTimeout(typing1, 120);
-      }
+      if (index1 < content1.length) { text1.textContent += content1[index1]; index1++; setTimeout(typing1, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box1",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing1()
-    });
+    ScrollTrigger.create({ trigger: ".content_box1", start: "top 80%", once: true, onEnter: () => typing1() });
 
-    // 2️⃣ Honest Lab
     const content2 = " Title: Honest Lab ";
     const text2 = document.querySelector(".content_box2 .title.mainfont");
     let index2 = 0;
     function typing2() {
-      if (index2 < content2.length) {
-        text2.textContent += content2[index2];
-        index2++;
-        setTimeout(typing2, 120);
-      }
+      if (index2 < content2.length) { text2.textContent += content2[index2]; index2++; setTimeout(typing2, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box2",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing2()
-    });
+    ScrollTrigger.create({ trigger: ".content_box2", start: "top 80%", once: true, onEnter: () => typing2() });
 
-    // 3️⃣ Hi-Medi Digital Care
     const content3 = " Title: Hi-Medi Digital Care ";
     const text3 = document.querySelector(".content_box3 .title.mainfont");
     let index3 = 0;
     function typing3() {
-      if (index3 < content3.length) {
-        text3.textContent += content3[index3];
-        index3++;
-        setTimeout(typing3, 120);
-      }
+      if (index3 < content3.length) { text3.textContent += content3[index3]; index3++; setTimeout(typing3, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box3",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing3()
-    });
+    ScrollTrigger.create({ trigger: ".content_box3", start: "top 80%", once: true, onEnter: () => typing3() });
 
-    // 4️⃣ Theme Park
     const content4 = " Title: Theme Park ";
     const text4 = document.querySelector(".content_box4 .title.mainfont");
     let index4 = 0;
     function typing4() {
-      if (index4 < content4.length) {
-        text4.textContent += content4[index4];
-        index4++;
-        setTimeout(typing4, 120);
-      }
+      if (index4 < content4.length) { text4.textContent += content4[index4]; index4++; setTimeout(typing4, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box4",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing4()
-    });
+    ScrollTrigger.create({ trigger: ".content_box4", start: "top 80%", once: true, onEnter: () => typing4() });
 
-    // 5️⃣ Luminote
     const content5 = " Title: Luminote ";
     const text5 = document.querySelector(".content_box5 .title.mainfont");
     let index5 = 0;
     function typing5() {
-      if (index5 < content5.length) {
-        text5.textContent += content5[index5];
-        index5++;
-        setTimeout(typing5, 120);
-      }
+      if (index5 < content5.length) { text5.textContent += content5[index5]; index5++; setTimeout(typing5, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box5",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing5()
-    });
+    ScrollTrigger.create({ trigger: ".content_box5", start: "top 80%", once: true, onEnter: () => typing5() });
 
-    // 6️⃣ Second Portfolio
     const content6 = " Second Portfolio: The Squirrel's Journey ";
     const text6 = document.querySelector(".content_box6 .title.mainfont");
     let index6 = 0;
     function typing6() {
-      if (index6 < content6.length) {
-        text6.innerHTML += content6[index6]; // <br> 대응
-        index6++;
-        setTimeout(typing6, 120);
-      }
+      if (index6 < content6.length) { text6.innerHTML += content6[index6]; index6++; setTimeout(typing6, 120); }
     }
-    ScrollTrigger.create({
-      trigger: ".content_box6",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing6()
-    });
+    ScrollTrigger.create({ trigger: ".content_box6", start: "top 80%", once: true, onEnter: () => typing6() });
 
-    // 7️⃣ 김급식 App Upgrade
     const content7 = " Title: 김급식 App Upgrade ";
     const text7 = document.querySelector(".section6 .left_img .title.mainfont");
     let index7 = 0;
-
     function typing7() {
-      if (index7 < content7.length) {
-        text7.textContent += content7[index7];
-        index7++;
-        setTimeout(typing7, 120);
-      }
+      if (index7 < content7.length) { text7.textContent += content7[index7]; index7++; setTimeout(typing7, 120); }
     }
+    ScrollTrigger.create({ trigger: ".section6 .left_img", start: "top 80%", once: true, onEnter: () => typing7() });
 
-    ScrollTrigger.create({
-      trigger: ".section6 .left_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing7()
-    });
-
-    // 8️⃣ Note Design
     const content8 = " Title: Note Design ";
     const text8 = document.querySelector(".section6 .rigth_img .title.mainfont");
     let index8 = 0;
-
     function typing8() {
-      if (index8 < content8.length) {
-        text8.textContent += content8[index8];
-        index8++;
-        setTimeout(typing8, 120);
-      }
+      if (index8 < content8.length) { text8.textContent += content8[index8]; index8++; setTimeout(typing8, 120); }
     }
+    ScrollTrigger.create({ trigger: ".section6 .rigth_img", start: "top 80%", once: true, onEnter: () => typing8() });
 
-    ScrollTrigger.create({
-      trigger: ".section6 .rigth_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing8()
-    });
-
-    // 9️⃣ Class Care
     const content9 = " Title: Class Care ";
     const text9 = document.querySelector(".section7 .top_img .big_textbox .title.mainfont");
     let index9 = 0;
-
     function typing9() {
-      if (index9 < content9.length) {
-        text9.textContent += content9[index9];
-        index9++;
-        setTimeout(typing9, 120);
-      }
+      if (index9 < content9.length) { text9.textContent += content9[index9]; index9++; setTimeout(typing9, 120); }
     }
+    ScrollTrigger.create({ trigger: ".section7 .top_img", start: "top 80%", once: true, onEnter: () => typing9() });
 
-    ScrollTrigger.create({
-      trigger: ".section7 .top_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing9()
-    });
-
-    // 🔟 GEMORA
     const content10 = " Title: GEMORA ";
     const text10 = document.querySelector(".section7 .bottom_img .big_textbox .title.mainfont");
     let index10 = 0;
-
     function typing10() {
-      if (index10 < content10.length) {
-        text10.textContent += content10[index10];
-        index10++;
-        setTimeout(typing10, 120);
-      }
+      if (index10 < content10.length) { text10.textContent += content10[index10]; index10++; setTimeout(typing10, 120); }
     }
-
-    ScrollTrigger.create({
-      trigger: ".section7 .bottom_img",
-      start: "top 80%",
-      once: true,
-      onEnter: () => typing10()
-    });
-
+    ScrollTrigger.create({ trigger: ".section7 .bottom_img", start: "top 80%", once: true, onEnter: () => typing10() });
 
     // ------------------------------------------------
     // Section 3 : Skill 영역
@@ -860,10 +655,9 @@ ScrollTrigger.matchMedia({
         stagger: 0.2
       });
 
-
-    // // ------------------------------------------------
-    // // Section 4 : Web Design (SplitText)
-    // // ------------------------------------------------
+    // ------------------------------------------------
+    // Section 4 : Web Design
+    // ------------------------------------------------
     gsap.timeline({
       scrollTrigger: {
         trigger: ".section4",
@@ -873,12 +667,12 @@ ScrollTrigger.matchMedia({
       }
     });
 
-
     gsap.utils.toArray(".section4 .content_box").forEach((box) => {
       gsap.from(box, {
-        x: -100,  // 왼쪽에서 등장
+        x: -100,
         autoAlpha: 0,
         duration: 1,
+        clearProps: "all",
         scrollTrigger: {
           trigger: box,
           start: "top 80%",
@@ -906,9 +700,21 @@ ScrollTrigger.matchMedia({
       });
     });
 
+    document.querySelectorAll(".section4 .one0, .section4 .one1, .section4 .one2, .section4 .one3, .section4 .one4, .section4 .one5, .section4 .one6")
+      .forEach((oneBox) => {
+        let computer = oneBox.querySelector(".computer");
+        if (computer) {
+          ScrollTrigger.create({
+            trigger: oneBox,
+            start: "top 70%",
+            end: "bottom 30%",
+            toggleClass: { targets: computer, className: "on" },
+          });
+        }
+      });
 
     // ------------------------------------------------
-    // Section 5 : Banner (가로 스크롤)
+    // Section 5 : Banner
     // ------------------------------------------------
     gsap.timeline({
       scrollTrigger: {
@@ -917,14 +723,11 @@ ScrollTrigger.matchMedia({
         end: "center top",
         scrub: true,
       }
-    }).from(".section5 li",
-      {
-        marginTop: 100,
-        stagger: 0.05,
-        duration: 1
-      }
-    )
-
+    }).from(".section5 li", {
+      marginTop: 100,
+      stagger: 0.05,
+      duration: 1
+    });
 
     // ------------------------------------------------
     // Section 7 : Collaborative Work
@@ -942,10 +745,64 @@ ScrollTrigger.matchMedia({
     }).from(".section7 .imgbox .bottom_img .big_textbox", {
       left: '-15%',
       y: 80
-    })
+    });
 
+    // ------------------------------------------------
+    // Section 9 : photo 순차 등장 애니메이션
+    // ------------------------------------------------
 
-    // ⭐ cleanup 함수 (모바일 → PC로 전환될 때 실행됨)
+    // photo1 단독 먼저
+    gsap.from(".photo1", {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.4,
+      scrollTrigger: {
+        trigger: ".photo-wall",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // photo2~3
+    gsap.from(".photo2, .photo3", {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.4,
+      delay: 0.3,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".photo-wall",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // photo4 이후 2개씩
+    const photoPairs = [
+      ".photo4, .photo5",
+      ".photo6, .photo7",
+      ".photo8, .photo9",
+      ".photo10, .photo11",
+      ".photo12, .photo13",
+      ".photo14, .photo15"
+    ];
+
+    photoPairs.forEach((pair, i) => {
+      gsap.from(pair, {
+        autoAlpha: 0,
+        y: 30,
+        duration: 0.4,
+        delay: 0.5 + (i * 0.3),
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".photo-wall",
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // ⭐ cleanup 함수
     return () => {
       console.log("모바일 모드 종료");
       const msg = document.querySelector("#mobileNotice");
