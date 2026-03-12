@@ -63,15 +63,7 @@ ScrollTrigger.matchMedia({
         trigger: ".section1",
         start: "top top",
         end: "+=1500",
-        scrub: true,
-        onLeave: () => {
-          const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph2.png";
-        },
-        onEnterBack: () => {
-          const graphImg = document.querySelector(".graph_box img");
-          if (graphImg) graphImg.src = "images/section2/graph.png";
-        }
+        scrub: true
       }
     }).to(".mainImgWrap", {
       marginLeft: -150,
@@ -80,6 +72,19 @@ ScrollTrigger.matchMedia({
       rotate: -50
     });
 
+    ScrollTrigger.create({
+      trigger: ".graph_box",
+      start: "top 80%",
+      onEnter: () => {
+        const graphImg = document.querySelector(".graph_box img");
+        if (graphImg) graphImg.src = "images/section2/graph2.png";
+      },
+      onLeaveBack: () => {
+        const graphImg = document.querySelector(".graph_box img");
+        if (graphImg) graphImg.src = "images/section2/graph.png";
+      }
+    });
+    
     // ------------------------------------------------
     // Section 2-2 :  이미지 추가 이동
     // ------------------------------------------------
@@ -130,6 +135,7 @@ ScrollTrigger.matchMedia({
     const text0 = document.querySelector(".content_box0 .title.mainfont");
     let index0 = 0;
     function typing0() {
+      if (index0 === 0) text0.textContent = '';
       if (index0 < content0.length) {
         text0.textContent += content0[index0];
         index0++;
@@ -546,6 +552,7 @@ ScrollTrigger.matchMedia({
     const text0 = document.querySelector(".content_box0 .title.mainfont");
     let index0 = 0;
     function typing0() {
+      if (index0 === 0) text0.textContent = '';
       if (index0 < content0.length) { text0.textContent += content0[index0]; index0++; setTimeout(typing0, 120); }
     }
     ScrollTrigger.create({ trigger: ".content_box0", start: "top 80%", once: true, onEnter: () => typing0() });
