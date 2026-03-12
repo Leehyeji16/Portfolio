@@ -17,6 +17,7 @@
     }
 
     /*section2*/
+
     .section2 .img_box .img {
         max-width: 100%;
         height: auto;
@@ -51,6 +52,58 @@
         position: static;
         margin-top: 5vh;
         text-align: center;
+    }
+
+    .s2-intro {
+        flex-wrap: wrap;
+    }
+
+    .s2-intro-img {
+        flex-shrink: 0;
+    }
+
+    .s2-intro-img .me img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .s2-intro-text {
+        flex: 1;
+    }
+
+    .s2-tagline {
+        font-size: 0.9rem;
+    }
+
+    .s2-desc {
+        font-size: 0.85rem;
+    }
+
+    .s2-link {
+        font-size: 0.85rem;
+    }
+
+    .graph_box {
+        width: 100%;
+        order: 3;
+        text-align: center;
+    }
+
+    .graph_box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .exp-card-tag {
+        font-size: 0.65rem;
+    }
+
+    .exp-card-btn {
+        font-size: 0.7rem;
+    }
+
+    .exp-card-desc {
+        font-size: 0.65rem;
     }
 
     /*section3*/
@@ -510,7 +563,7 @@
         border-radius: 50%;
         object-fit: cover;
     }
-    
+
     .section2 .img_box .Squirrel img {
         display: none;
     }

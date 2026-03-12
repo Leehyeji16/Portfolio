@@ -208,108 +208,225 @@ body {
 
 /* .section2 */
 .section2 {
-  position: relative;
-  padding: 250px 0;
-  position: relative;
+    position: relative;
+    padding: 0px 0 150px;
+    z-index: 1;
 }
 
-.section2 .centerbox {
-  display: flex;
-  justify-content: space-between;
-  gap: 120px;
-  ;
+/* 상단 소개 영역 */
+.s2-intro {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;  /* flex-start → stretch */
+    gap: 50px;
+    margin-bottom: 150px;
 }
 
-.section2 .content_box {
-  width: 600px;
-  flex-grow: 1;
+.s2-intro-img {
+    position: relative;
+    flex-shrink: 0;
+    width: 280px;
 }
 
-.section2 .double-line {
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  height: 3px;
-  width: 205px;
-  margin-bottom: 30px;
+.s2-intro-img .me img {
+    width: 280px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
 }
 
-.section2 .textbox1 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  /* 텍스트가 여러 줄일 때 상단 기준으로 맞춤 */
-  gap: 40px;
-  margin-bottom: 15px;
+.s2-intro-img .Squirrel {
+    position: absolute;
+    left: 200px;
+    top: 180px;
 }
 
-.section2 .textbox1 P {
-  color: #fff;
-  font-size: 25px;
-  margin-bottom: 80px;
+.s2-intro-img .Squirrel img {
+    width: 100px;
+    height: auto;
 }
 
-.section2 .textbox1 span {
-  color: #fff;
-  font-size: 25px;
-}
-
-.section2 .textbox1 .date {
-  font-weight: 700;
-  white-space: nowrap; 
-  width: 350px; 
-  flex-shrink: 0; 
-  color: #fff;
-  line-height: 1.6;
-  font-size: 25px;
-}
-
-/* 설명 부분 (오른쪽 텍스트) */
-.section2 .textbox1 .desc {
-  color: #fff;
-  font-size: 25px;
-  line-height: 1.6;
-  flex-grow: 1;
-  word-break: keep-all; 
-}
-
-/* 텍스트가 단순히 span일 경우를 대비해 통합 스타일 적용 */
-.section2 .textbox1 span,
-.section2 .textbox1 P,
-.section2 .textbox1 a {
-  color: #fff;
-  font-size: 25px;
-  line-height: 1.6;
-}
-
-.section2 .tbox2 {
-  margin-top: 150px;
-  position: relative;
-}
-
-.section2 .tbox2 .graph_box {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.section2 .tbox3 {
-  margin-top: 150px;
-}
-
-.section2 .tbox3 .textbox1 a {
-  color: #fff;
-  font-size: 25px;
-}
-
-/* .section2 img{position: absolute;bottom: 180px;left: 530px;} */
 .section2 .img_box {
-  position: relative;
+    display: none;
 }
 
-.section2 .img_box .Squirrel {
-  position: absolute;
-  left: 500px;
-  top: 350px;
+.s2-intro-text {
+    flex: 1;
+    max-width: 800px;
+        display: flex;
+    flex-direction: column;  /* 추가 */
+}
+
+.s2-tagline {
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.s2-desc {
+    font-size: 25px;
+    color: #fff;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.s2-links {
+    margin-top: auto;  /* 추가 - 나머지 공간 다 차지하고 맨 아래로 */
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.s2-link {
+    font-size: 22px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.s2-link:hover {
+    color: #b06cf8;
+    border-color: #b06cf8;
+}
+
+
+/* ─── Experience & Activities ─── */
+
+.exp-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.exp-main-title {
+  margin-top: 10px;
+    font-size: 80px;
+    color: #C0C0C0;
+    margin-bottom: 80px;
+}
+
+.exp-category-label {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    color: #b06cf8;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 700;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.exp-card {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.exp-card-tag {
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    display: block;
+}
+
+.exp-card-btn {
+    align-self: stretch;      /* flex-start → stretch (꽉 차게) */
+    border: 1.5px solid rgba(255,255,255,0.8);
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 10px;       /* 위아래 패딩 줄여서 얇게 */
+    font-size: 20px;
+    font-family: inherit;
+    line-height: 1.4;
+    transition: background 0.25s, color 0.25s;
+    cursor: default;
+        text-align: center;       /* 텍스트 중앙정렬 */
+
+}
+
+.exp-card:hover .exp-card-btn {
+    background: rgba(176,108,248,0.15);
+    border-color: #b06cf8;
+    color: #b06cf8;
+}
+
+.exp-card-desc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exp-card-desc li {
+    font-size: 20px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.exp-card-desc li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: rgba(176,108,248,0.6);
+}
+
+/* 자격증 카드 */
+.exp-card-cert .exp-cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 4px;
+}
+
+.exp-cert-item {
+    font-size: 20px;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cert-year {
+    font-size: 16px;
+    color: rgba(176,108,248,0.7);
+    font-weight: 700;
+    min-width: 40px;
+}
+
+/* 기존 스타일 제거 */
+.section2 .content_box,
+.section2 .tbox1,
+.section2 .tbox2,
+.section2 .tbox3,
+.section2 .double-line,
+.section2 .textbox1 {
+    display: none !important;
+}
+
+.graph_box {
+    flex-shrink: 0;
+    width: 300px;
+    display: flex;
+    align-items: center;
+        margin-left: -50px; /* 왼쪽으로 당기기, 값 조절하면서 맞추세요 */
+
+}
+.graph_box img {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -364,7 +481,7 @@ body {
 }
 
 .section4 .one0 .title {
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   margin-bottom: 22px;
 }
@@ -764,7 +881,7 @@ body {
 }
 
 .section4 .label {
-  color: #555;
+  color: #999;
 }
 
 

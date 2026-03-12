@@ -1,6 +1,14 @@
 /* 640px 미디어쿼리 닫힌 후 여기에 추가 */
 
 @media screen and (max-width: 1200px) {
+    .section2 {
+        padding-bottom: 50px;
+    }
+
+    .section3 h1 {
+        margin-bottom: 50px;
+    }
+
     .section4 {
         padding: 50px 0 !important;
         overflow-x: hidden !important;
@@ -13,9 +21,8 @@
         gap: 30px !important;
         width: 100% !important;
         max-width: 100% !important;
-        padding: 20px 0 !important;
-        margin: 0 auto 80px auto !important;
         overflow: hidden !important;
+        margin-bottom: 50px;
     }
 
     .section4 .one .bg_circle {
@@ -120,10 +127,109 @@
         left: 0 !important;
         margin-left: 0 !important;
     }
+
+    .section4 .label {
+        margin-bottom: 5px;
+        ;
+    }
+
+    .section4 .logo img {
+        width: 80px;
+        height: auto;
+    }
+
+    .section4 .content_box3 .logo img {
+        width: 150px;
+    }
+
+    .section4 .content_box5 .logo img {
+        width: 100px;
+        margin-top: 5px;
+    }
+
+    .s2-intro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .s2-intro-img {
+        order: 1;
+    }
+
+    .s2-intro-text {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .s2-links {
+        justify-content: center;
+    }
+
+    .graph_box {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .exp-card-tag {
+        font-size: 0.65rem;
+    }
+
+    .exp-card-btn {
+        font-size: 12px;
+    }
+
+    .exp-main-title {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .pipe-br {
+        display: block;
+    }
+
+    .exp-card-desc {
+        font-size: 0.65rem;
+    }
+
+    .exp-card-desc li {
+        font-size: 12px;
+    }
+
+    .exp-cert-item {
+        font-size: 12px;
+    }
+
+    .section5 {
+        padding: 250px 0 50px 0;
+    }
+
+    .section5 h1 {
+        margin-bottom: 50px;
+    }
+
+    .section6 {
+        padding: 0px;
+    }
+
+    .section6 h1 {
+        margin-bottom: 0px;
+    }
+
+    .section7 h1 {
+        margin-bottom: 50px;
+    }
+
+    .section8 h1 {
+        margin-bottom: 50px;
+    }
+
 }
 
 @media screen and (max-width:640px) {
-
 
     body {
         min-width: auto;
@@ -197,10 +303,6 @@
 
     .section2 .textbox1 .desc {
         color: #e2cebf;
-    }
-
-    .section2 .tbox2 .textbox1 .date {
-        line-height: 1;
     }
 
     .section2 .tbox2 .textbox1 {
@@ -388,10 +490,6 @@
 
     .section4 .computer.on .webimg {
         margin-top: 0;
-    }
-
-    .section4 img {
-        width: 20vw;
     }
 
     .section5 h1 {
