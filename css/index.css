@@ -771,13 +771,10 @@ body {
 
 .section4 .one5 {
   padding: 250px 0;
-  ;
   display: flex;
   width: 1650px;
   align-items: center;
   gap: 150px;
-  ;
-  ;
   padding: 40px;
   justify-content: space-between;
 }
@@ -826,7 +823,9 @@ body {
   margin-right: 6px;
   background: var(--c);
 }
-
+.section4 .one5 .computer.on .monitor {
+  transform: rotateY(-15deg) !important;
+}
 /* .section4 .one5 .computer img{width: 750px;; height: auto;}  */
 
 .section4 .one6 {
@@ -879,7 +878,9 @@ body {
   margin-right: 6px;
   background: var(--c);
 }
-
+.section4 .one6 .computer.on .monitor {
+  transform: rotateY(15deg) !important;
+}
 .section4 .label {
   color: #999;
 }
